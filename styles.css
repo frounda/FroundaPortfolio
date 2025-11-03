@@ -1,0 +1,89 @@
+/* === Palette from your image ===
+   Burnt Umber, Redwood, Macadamia, Cool Blue, Light Grayish
+*/
+:root{
+  --burnt: #7a0f0f;        /* Burnt Umber */
+  --redwood: #b6232a;      /* Redwood */
+  --macadamia: #f6e9d3;    /* Macadamia / warm cream */
+  --cool: #1f4e72;         /* Cool Blue */
+  --light: #77a7c3;        /* Light Grayish Blue */
+
+  --ink: #1b1b1b;          /* body text */
+  --paper: var(--macadamia);
+  --card: #ffffff;
+  --border: #e7ddd0;
+  --shadow: 0 18px 40px rgba(0,0,0,.12);
+}
+
+/* Body background now warm macadamia with a soft redwood haze */
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 520px at 80% -10%, color-mix(in lch, var(--redwood), transparent 80%), transparent 60%),
+    var(--paper);
+  font: 16px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ----- HEADER / MASTHEAD ----- */
+.top{
+  position:relative;
+  padding: 18px 0 120px;
+  overflow: clip;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0)),
+    radial-gradient(600px 180px at 50% 0%, color-mix(in lch, var(--redwood), transparent 45%), transparent 65%);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav{
+  width:min(1120px, 92%);
+  margin:0 auto 24px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.menu{ border:0; background:transparent; font-weight:800; font-size:22px; letter-spacing:.5px; }
+.links a{ margin:0 10px; text-decoration:none; color:var(--ink); opacity:.85; }
+.links a:hover{ opacity:1; color:var(--cool); }
+.join{
+  text-decoration:none; font-weight:800; letter-spacing:.8px;
+  color:#fff; background: linear-gradient(180deg, var(--cool), color-mix(in lch, var(--cool), #000 15%));
+  padding:.5rem .8rem; border-radius:10px;
+}
+
+/* Giant blurred brand word uses burnt umber */
+.brand{
+  position:absolute; inset:10px 0 auto 0; text-align:center;
+  font: 900 clamp(64px, 18vw, 220px)/1 "Anton", Impact, sans-serif;
+  letter-spacing:2px; color: var(--burnt);
+  filter: blur(6px) saturate(115%); opacity:.6; pointer-events:none; user-select:none;
+}
+
+/* Spray bar tint = redwood */
+.spray{
+  position:absolute; inset:0 0 auto 0; height:140px;
+  background: radial-gradient(60% 100% at 50% 50%, color-mix(in lch, var(--redwood), #fff 5%), transparent 70%);
+  filter: blur(18px); opacity:.55; pointer-events:none;
+}
+
+/* Name over cream—keep white shadow for contrast */
+.name{ color:#fff; text-shadow: 0 2px 20px rgba(0,0,0,.35); }
+
+/* CTAs and READ MORE use redwood; links/accents use cool blue */
+.cta,
+.card .read{
+  color: var(--redwood);
+  border-bottom: 2px solid var(--redwood);
+}
+.contact a{ color: var(--cool); border-bottom:1px solid color-mix(in lch, var(--cool), #fff 40%); }
+.contact a:hover{ color: color-mix(in lch, var(--cool), #000 15%); }
+
+/* Skill chips with light blue */
+.chips li{
+  background: color-mix(in lch, var(--light), #fff 30%);
+  border: 1px solid color-mix(in lch, var(--light), #000 10%);
+  color: color-mix(in lch, var(--cool), #000 10%);
+}
+
+/* Panels keep white on macadamia paper */
+.panel{ background:var(--card); border:1px solid var(--border); }
+.panel h2{ border-bottom:2px solid color-mix(in lch, var(--light), #fff 35%); }
