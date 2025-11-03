@@ -98,3 +98,19 @@ body{
 /* Panels keep white on macadamia paper */
 .panel{ background:var(--card); border:1px solid var(--border); }
 .panel h2{ border-bottom:2px solid color-mix(in lch, var(--light), #fff 35%); }
+
+/* ==== Make the name bold, bright, and above the red ALYA ==== */
+.name{
+  font: 1000 clamp(36px, 4.5vw, 60px)/1.1 "Anton", Impact, sans-serif;
+  color: #d6ebff; /* baby blue */
+  -webkit-text-stroke: 1.5px #ffffff; /* white outline for visibility */
+  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 10;
+}
+
+.brand{
+  z-index: 0; /* pushes the red ALYA background behind your name */
+  position: relative;
+}
