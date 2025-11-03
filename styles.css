@@ -113,7 +113,18 @@ body{
   z-index: 15; /* brings it on top of background text */
 }
 
-/* pushes the red ALYA background behind your face and name */
+/* ==== Make the name bold white and on top ==== */
+.name {
+  font: 1000 clamp(36px, 4.5vw, 60px)/1.1 "Anton", Impact, sans-serif;
+  color: #ffffff; /* pure white */
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 20; /* bring above all layers */
+}
+
+/* pushes the red ALYA background behind everything */
 .brand {
   position: absolute;
   inset: 10px 0 auto 0;
@@ -121,9 +132,9 @@ body{
   font: 900 clamp(64px, 18vw, 220px)/1 "Anton", Impact, sans-serif;
   letter-spacing: 2px;
   color: var(--burnt);
-  filter: blur(6px) saturate(115%);
-  opacity: 0.45; /* softer red behind */
+  filter: blur(6px);
+  opacity: 0.4;
   pointer-events: none;
   user-select: none;
-  z-index: 1; /* behind avatar and name */
+  z-index: 1; /* background layer */
 }
